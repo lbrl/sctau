@@ -30,6 +30,8 @@ def main():
     t = Fin.Get('events')
     print '{} entries in the tree.'.format(t.GetEntries())
     ################
+    massi = 'GenParticle.core.p4.mass'
+    massf = 'RecParticle.core.p4.mass'
     pdgidi = 'GenParticle.core.pdgId'
     pdgidf = 'RecParticle.core.pdgId'
     pxi = 'GenParticle.core.p4.px'
@@ -79,6 +81,11 @@ def main():
     tuneh1(hpdgidi, lc=r.kRed, lw=2)
     hpdgidf = geth1(t, '{} >> hpdgidf(5000,-2500,2500)'.format(pdgidf), '')
     tuneh1(hpdgidf, lc=r.kBlue, lw=2)
+    ########
+    hmassi = geth1(t, '{} >> hmassi(1e4,0,2)'.format(massi), '')
+    tuneh1(hmassi, lc=r.kRed, lw=2)
+    hmassf = geth1(t, '{} >> hmassf(1e4,0,2)'.format(massf), '')
+    tuneh1(hmassf, lc=r.kBlue, lw=2)
     ################
     if '-b' in sys.argv:
         wx, wy = 600, 600
@@ -152,7 +159,7 @@ def main():
     c1.cd(11)
     hpdgidi.Draw()
     hpdgidf.Draw('same')
-    hpi.GetXaxis().SetTitle(r'Particle ID')
+    hpdgidi.GetXaxis().SetTitle(r'Particle ID')
     lat.SetTextColor(r.kRed)
     lat.DrawLatexNDC(.15, .9, 'Initial')
     lat.SetTextAngle(90)
@@ -169,6 +176,16 @@ def main():
             bcen = hpdgidf.GetBinCenter(i)
             lat.DrawLatex(bcen, x, '{}'.format(int(bcen-.5)))
     lat.SetTextAngle(0)
+    ########
+    c1.cd(12)
+    hmassi.Draw()
+    hmassf.Draw('same')
+    hmassi.GetXaxis().SetTitle(r'Mass, GeV/c^{2}')
+    lat.SetTextColor(r.kRed)
+    lat.DrawLatexNDC(.15, .9, 'Initial')
+    lat.SetTextColor(r.kBlue)
+    lat.DrawLatexNDC(.55, .9, 'Final')
+    r.gPad.SetLogx()
     ########
     c1.cd()
     c1.Update()
