@@ -15,7 +15,7 @@ class SCTauField : public Field {
      * @param[in] x0 field material X0
      * @param[in] lambdaI field material lambdaI
      */
-    SCTauField(double magnitude = 3.8, double radius = 2.9, double z = 3.6);
+    SCTauField(double magnitude = 1.0, double radius = 2.5, double z = 3.0);
 };
 
 }  // end namespace papas
