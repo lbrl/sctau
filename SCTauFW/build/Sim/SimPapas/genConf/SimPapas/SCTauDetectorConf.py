@@ -1,4 +1,4 @@
-#Sat Jan 13 18:05:55 2018"""Automatically generated. DO NOT EDIT please"""
+#Sun Jan 14 22:25:46 2018"""Automatically generated. DO NOT EDIT please"""
 from GaudiKernel.Proxy.Configurable import *
 
 class SCTauDetSvc( ConfigurableService ) :
@@ -17,7 +17,7 @@ class SCTauDetSvc( ConfigurableService ) :
     'fieldService' : '', # str
     'electronAcceptanceMagnitude' : 0.50000000, # float
     'electronAcceptanceEta' : 2.5000000, # float
-    'muonAcceptanceMagnitude' : 7.5000000, # float
+    'muonAcceptanceMagnitude' : 0.50000000, # float
     'muonAcceptanceTheta' : 80.000000, # float
     'electronEnergyFactor' : 0.10000000, # float
     'muonResolution' : 0.020000000, # float
