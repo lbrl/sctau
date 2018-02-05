@@ -65,7 +65,7 @@ ApplicationMgr(
     TopAlg=[gun, hepmc_converter, papasalg, out],
     EvtSel='NONE',
     ## number of events
-    EvtMax=10000,
+    EvtMax=100000,
     ## all services should be put here
     ExtSvc = [podioevent, detservice, particlePropertySvc],
     OutputLevel = DEBUG,
